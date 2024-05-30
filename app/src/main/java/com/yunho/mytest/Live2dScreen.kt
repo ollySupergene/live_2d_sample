@@ -27,11 +27,11 @@ fun Live2dScreen() {
         factory = {
             GLSurfaceView(it).apply {
                 setEGLContextClientVersion(2)
-                setRenderer(glRenderer)
             }
         },
         update = {
-
+            JniBridgeJava.nativeOnStart()
+            it.setRenderer(glRenderer)
         }
     )
 }
