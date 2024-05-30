@@ -17,12 +17,6 @@ fun Live2dScreen() {
     val glRenderer = remember {
         GLRenderer()
     }
-    val glSurfaceView = remember {
-        GLSurfaceView(context).apply {
-            setEGLContextClientVersion(2)
-            setRenderer(glRenderer)
-        }
-    }
 
     LaunchedEffect(Unit) {
         JniBridgeJava.SetContext(context)
@@ -31,7 +25,10 @@ fun Live2dScreen() {
     AndroidView(
         modifier = Modifier.fillMaxSize(),
         factory = {
-            glSurfaceView
+            GLSurfaceView(it).apply {
+                setEGLContextClientVersion(2)
+                setRenderer(glRenderer)
+            }
         },
         update = {
 
