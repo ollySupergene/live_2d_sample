@@ -12,14 +12,14 @@ import javax.microedition.khronos.opengles.GL10
 
 class GLRenderer : GLSurfaceView.Renderer {
     override fun onSurfaceCreated(gl: GL10, config: EGLConfig) {
-//        JniBridgeJava.nativeOnSurfaceCreated()
+        JniBridgeJava.nativeOnSurfaceCreated()
     }
 
     override fun onSurfaceChanged(gl: GL10, width: Int, height: Int) {
-//        JniBridgeJava.nativeOnSurfaceChanged(width, height)
+        JniBridgeJava.nativeOnSurfaceChanged(width, height)
     }
 
     override fun onDrawFrame(gl: GL10) {
-//        JniBridgeJava.nativeOnDrawFrame()
+        JniBridgeJava.nativeOnDrawFrame()
     }
 }
